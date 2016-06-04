@@ -1,18 +1,19 @@
 <html>
 	<head>
-		<title>Le Blog de Mathilde</title>
-		<style type="text/css">
-		h1 {
-			margin-bottom: -19px;
-		};
-		</style>
+    	<title>Django Girls blog</title>
 	</head>
-
 	<body>
-		<div><h1>L'aventure <a href="https://djangogirls.org">Django girls</a><h1>
-		<h4>Récit d'une journée très remplie</h4></div>
-		
-		<div><ul><li>Hi there!</li><li>It works!</li><ul></div>
-    
-    </body>
+
+<div>
+    <h1><a href="/">Django Girls Blog</a></h1>
+</div>
+
+{% for post in posts %}
+    <div>
+        <p>publié: {{ post.published_date }}</p>
+        <h1><a href="">{{ post.title }}</a></h1>
+        <p>{{ post.text|linebreaks }}</p>
+    </div>
+{% endfor %}		
+	</body>
 </html>
